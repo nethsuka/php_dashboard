@@ -1,0 +1,19 @@
+php artisan serve
+
+php artisan make:migration create_links_table
+
+php artisan make:model links -mc
+
+php artisan migrate
+
+php artisan migrate:fresh
+
+php artisan migrate:refresh
+
+php artisan migrate:status
+
+php artisan migrate:rollback
+
+php artisan config:cache
+php artisan cache:clear
+php artisan view:clear
