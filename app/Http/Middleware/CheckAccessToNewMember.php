@@ -21,7 +21,7 @@ class CheckAccessToNewMember
             //get the authenticated user
             $user = Auth::user();
             if($user->type == "member" || $user->type == "admin") {
-                return redirect('/contributers');
+                return redirect('/contributers')->with("error", "You don't have access to that option");
             }
             
         }

@@ -166,16 +166,27 @@ Coded by www.creative-tim.com
                         <div class="col-sm">
                           <form action="/contributers/{{ $member->id }}">
                             @csrf
-                            <input type="submit" value="Change">
+                            @if(Auth::user()->type == 'owner' || Auth::user()->type == 'admin')
+                              <input type="submit" value="Change">
+                            @else
+                              <input type="submit" value="Change" disabled>
+                            @endif
                           </form>
                         </div>
                         <div class="col-sm">
                           <form action="{{ route('new-member.destroy', $member->id)  }}" method="post" onsubmit="return confirm('Are you sure you want to delete this member?');">
                               @csrf
                               @method('DELETE')
-                              <button type="submit" class="btn btn-danger btn-sm mt-0" title="Delete">
-                                  <img src="./assets/img/bin-removebg-preview.png" alt="delete icon" height="15px">
-                              </button>
+                              @if(Auth::user()->type == 'owner' || Auth::user()->type == 'admin')
+                                <button type="submit" class="btn btn-danger btn-sm mt-0" title="Delete">
+                                    <img src="./assets/img/bin-removebg-preview.png" alt="delete icon" height="15px">
+                                </button>
+                              @else
+                                <button type="submit" class="btn btn-danger btn-sm mt-0" title="Delete" disabled>
+                                    <img src="./assets/img/bin-removebg-preview.png" alt="delete icon" height="15px">
+                                </button>
+                              @endif
+
                           </form>
                         </div>
                       </div>

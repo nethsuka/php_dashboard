@@ -20,24 +20,42 @@
                             @csrf
                             @method('PUT')
                             <select class="form-select" aria-label="Default select example" name="member_type">
-                                @if($member->type == "owner")
-                                    <div>
-                                        <option value="owner" selected>Owner </option>
-                                        <option value="admin">Admin</option>
-                                        <option value="member">Member</option>
-                                    </div>
-                                @elseif($member->type == "admin")
-                                    <div>
-                                        <option value="owner">Owner</option>
-                                        <option value="admin" selected>Admin</option>
-                                        <option value="member">Member</option>
-                                    </div>
+                                @if( Auth::user()->type == 'owner')
+                                    @if($member->type == "owner")
+                                        <div>
+                                            <option value="owner" selected>Owner </option>
+                                            <option value="admin">Admin</option>
+                                            <option value="member">Member</option>
+                                        </div>
+                                    @elseif($member->type == "admin")
+                                        <div>
+                                            <option value="owner">Owner</option>
+                                            <option value="admin" selected>Admin</option>
+                                            <option value="member">Member</option>
+                                        </div>
+                                    @else
+                                        <div>
+                                            <option value="owner">Owner</option>
+                                            <option value="admin">Admin</option>
+                                            <option value="member" selected>Member</option>
+                                        </div>
+                                    @endif
                                 @else
-                                    <div>
-                                        <option value="owner">Owner</option>
-                                        <option value="admin">Admin</option>
-                                        <option value="member" selected>Member</option>
-                                    </div>
+                                    @if($member->type == "owner")
+                                        <div>
+                                            <option value="owner" selected>Owner </option>
+                                        </div>
+                                    @elseif($member->type == "admin")
+                                        <div>
+                                            <option value="admin" selected>Admin</option>
+                                            <option value="member">Member</option>
+                                        </div>
+                                    @else
+                                        <div>
+                                            <option value="admin">Admin</option>
+                                            <option value="member" selected>Member</option>
+                                        </div>
+                                    @endif
                                 @endif
                             </select>
                     </div>
