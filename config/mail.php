@@ -110,7 +110,7 @@ return [
 
     'from' => [
         'address' => env('MAIL_FROM_ADDRESS', 'sanubro55@gmail.com'),
-        'name' => env('MAIL_FROM_NAME', 'WIS Dashboard'),
+        'name' => env('MAIL_FROM_NAME', 'WIS'),
     ],
 
 ];

@@ -8,6 +8,13 @@ use Illuminate\Support\Facades\Hash;
 
 class NewMemberController extends Controller
 {
+
+    public function __construct() {
+        //this middleware applies for the all the functions in the class
+        $this->middleware('auth');
+    }
+
+
     public function index() {
         return view('new_member');
     }

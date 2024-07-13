@@ -7,6 +7,13 @@ use App\Models\Link;
 
 class LinkController extends Controller
 {
+
+    public function __construct() {
+        //this middleware applies for the all the functions in the class
+        $this->middleware('auth');
+    }
+
+
     public function index() {
 
         $links = Link::all();
