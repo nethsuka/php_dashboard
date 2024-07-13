@@ -43,11 +43,8 @@ Coded by www.creative-tim.com
           </div> -->
           <!-- <p>CT</p> -->
         </a>
-        <a href="https://www.creative-tim.com" class="simple-text logo-normal">
-          Your Logo
-          <!-- <div class="logo-image-big">
-            <img src="../assets/img/logo-big.png">
-          </div> -->
+        <a href="/">
+          <img src="assets/img/wis_logo.png" height="48px" alt="logo">
         </a>
       </div>
       <div class="sidebar-wrapper">
@@ -93,6 +90,7 @@ Coded by www.creative-tim.com
             <span class="navbar-toggler-bar navbar-kebab"></span>
           </button>
           <div class="collapse navbar-collapse justify-content-end" id="navigation">
+          <a href="/new-member"><button type="button" class="btn btn-success float-right mr-4">Add Member</button></a>
             <form>
               <div class="input-group no-border">
                 <input type="text" value="" class="form-control" placeholder="Search...">
@@ -105,16 +103,22 @@ Coded by www.creative-tim.com
             </form>
             <ul class="navbar-nav">
               <li class="nav-item btn-rotate dropdown">
-                <a class="nav-link dropdown-toggle" href="http://example.com" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <a class="nav-link dropdown-toggle" href="" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  {{ Auth::user()->name }}
                   <i class="nc-icon nc-circle-10"></i>
                   <p>
                     <span class="d-lg-none d-md-block">Some Actions</span>
                   </p>
                 </a>
                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
-                  <a class="dropdown-item" href="#">Action</a>
-                  <a class="dropdown-item" href="#">Another action</a>
-                  <a class="dropdown-item" href="#">Something else here</a>
+                  <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault(); 
+                                                            document.getElementById('logout-form').submit();">
+                                                            {{ __('Logout') }}</a>
+                  <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                      @csrf
+                  </form>
+                  <!-- <a class="dropdown-item" href="#">Another action</a>
+                  <a class="dropdown-item" href="#">Something else here</a> -->
                 </div>
               </li>
             </ul>
@@ -141,7 +145,7 @@ Coded by www.creative-tim.com
           </div>
         @endif
         <div class="row">
-          <div class="col-md-7">
+          <div class="col-md-9">
               <div class="card ">
                 <div class="card-header ">
                   <h5 class="card-title">Member List</h5>
@@ -151,6 +155,7 @@ Coded by www.creative-tim.com
                   <div class="row">
                     <div class="col-md">&nbsp;&nbsp;&nbsp;Name</div>
                     <div class="col-sm">Membership</div>
+                    <div class="col-sm"></div>
                     <div class="col-sm"></div>
                   </div><br>
                   @if(!$user_list->isEmpty())
@@ -162,6 +167,15 @@ Coded by www.creative-tim.com
                           <form action="/contributers/{{ $member->id }}">
                             @csrf
                             <input type="submit" value="Change">
+                          </form>
+                        </div>
+                        <div class="col-sm">
+                          <form action="{{ route('new-member.destroy', $member->id)  }}" method="post" onsubmit="return confirm('Are you sure you want to delete this member?');">
+                              @csrf
+                              @method('DELETE')
+                              <button type="submit" class="btn btn-danger btn-sm mt-0" title="Delete">
+                                  <img src="./assets/img/bin-removebg-preview.png" alt="delete icon" height="15px">
+                              </button>
                           </form>
                         </div>
                       </div>

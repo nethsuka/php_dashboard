@@ -17,3 +17,11 @@ php artisan migrate:rollback
 php artisan config:cache
 php artisan cache:clear
 php artisan view:clear
+
+
+-inatalling authantication package-
+
+1 -  composer require laravel/ui
+
+2 - php artisan ui vue --auth
+
