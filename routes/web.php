@@ -1,10 +1,11 @@
 <?php
 
+use App\Models\User;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Middleware\CanChangeContributer;
 use App\Http\Middleware\CheckAccessToNewMember;
 use App\Http\Controllers\ContributersController;
-use App\Models\User;
 
 Route::get('/', function () {
     return view('welcome');
@@ -36,6 +37,9 @@ Route::get('/test1', 'App\Http\Controllers\TestController@show');
 Route::get('/welcome2', function () {
     return view('welcome2');
 });
-Auth::routes();
+
+Auth::routes(
+    ['register' => false]
+);
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
