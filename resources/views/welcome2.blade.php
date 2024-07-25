@@ -35,7 +35,7 @@
       <a href="/" class="hero-logo" data-aos="zoom-in"><img src="assets/img/wis_logo.png" height="100px" alt="logo"></a>
       <h1 data-aos="zoom-in">Welcome To The WIS Dashboard</h1>
       <h2 data-aos="fade-up">We are team of talented designers making websites with Bootstrap</h2>
-      <a data-aos="fade-up" data-aos-delay="200" href="#about" class="btn-get-started scrollto"><b>Login</b></a>
+      <a data-aos="fade-up" data-aos-delay="200" href="/login" class="btn-get-started scrollto"><b>Login</b></a>
     </div>
   </section>
   <!-- End Hero -->

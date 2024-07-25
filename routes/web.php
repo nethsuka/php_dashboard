@@ -10,7 +10,7 @@ use App\Http\Controllers\ContributersController;
 use App\Http\Controllers\ProfileController;
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('welcome2');
 });
 
 Route::get('/contributers', [ContributersController::class,'index']);
@@ -31,18 +31,14 @@ Route::put('/profile/{id}', [ProfileController::class, 'update'])->name('profile
 
 Route::get('/form', function () {
     return view('link_form');
-});
+})->middleware('auth');
 
 Route::get('/marketing', function () {
     return view('marketing');
-});
+})->middleware('auth');
 
 Route::get('/gg', function () {
     return view('auth.app');
-});
-
-Route::get('/welcome2', function () {
-    return view('welcome2');
 });
 
 Auth::routes(
