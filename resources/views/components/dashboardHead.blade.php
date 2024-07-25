@@ -49,19 +49,25 @@ Coded by www.creative-tim.com
       </div>
       <div class="sidebar-wrapper">
         <ul class="nav">
-          <li class="{{ $active == 'user-profile' ? 'active' : '' }}">
+          <li class="{{ $active == 'Manage Marketing' ? 'active' : '' }}">
+            <a href="/marketing">
+              <i class="nc-icon nc-tile-56"></i>
+              <p>Manage Marketing</p>
+            </a>
+          </li>
+          <li class="{{ $active == 'User Profile' ? 'active' : '' }}">
             <a href="/profile">
               <i class="nc-icon nc-badge"></i>
               <p>User Profile</p>
             </a>
           </li>
-          <li class="{{ $active == 'social-media' ? 'active' : '' }}">
+          <li class="{{ $active == 'Social Media' ? 'active' : '' }}">
             <a href="/links">
               <i class="nc-icon nc-bookmark-2"></i>
               <p>Social Media</p>
             </a>
           </li>
-          <li class="{{ $active == 'access-controls' ? 'active' : '' }}">
+          <li class="{{ $active == 'Access Controls' ? 'active' : '' }}">
             <a href="/contributers">
               <i class="nc-icon nc-controller-modern"></i>
               <p>Access Controls</p>
@@ -82,7 +88,7 @@ Coded by www.creative-tim.com
                 <span class="navbar-toggler-bar bar3"></span>
               </button>
             </div>
-            <a class="navbar-brand" href="javascript:;">Title</a>
+            <a class="navbar-brand" href="javascript:;">{{ $active }}</a>
           </div>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation" aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-bar navbar-kebab"></span>
@@ -93,6 +99,7 @@ Coded by www.creative-tim.com
           @if(isset($buttonName))
             <a href="{{$url}}"><button type="button" class="btn btn-success float-right mr-4">{{$buttonName}}</button></a>
           @endif
+          @if(isset($searchBar))
             <form>
               <div class="input-group no-border">
                 <input type="text" value="" class="form-control" placeholder="Search...">
@@ -103,6 +110,7 @@ Coded by www.creative-tim.com
                 </div>
               </div>
             </form>
+          @endif
             <ul class="navbar-nav">
               <li class="nav-item btn-rotate dropdown">
                 <a class="nav-link dropdown-toggle" href="" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">

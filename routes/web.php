@@ -33,6 +33,10 @@ Route::get('/form', function () {
     return view('link_form');
 });
 
+Route::get('/marketing', function () {
+    return view('marketing');
+});
+
 Route::get('/gg', function () {
     return view('auth.app');
 });

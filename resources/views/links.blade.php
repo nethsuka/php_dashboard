@@ -1,4 +1,4 @@
-<x-dashboardHead active="social-media" buttonName="ADD NEW" url="/form"/>
+<x-dashboardHead active="Social Media" buttonName="ADD NEW" url="/form" searchBar="true"/>
 
       <div class="container" style="margin-top: 90px; max-height:800px;">
         <!-- <a href="/form"><button type="button" class="btn btn-success float-right">Add New</button></a> -->
@@ -54,9 +54,9 @@
         @else
           <p>There is no data to show</p>
         @endif
-        <div class="col-md-12">
+        {{-- <div class="col-md-12">
           <h3 class="description">Your content here</h3>
-        </div>
+        </div> --}}
       </div>
 
 <x-dashboardFooter/>

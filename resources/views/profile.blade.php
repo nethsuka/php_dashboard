@@ -1,4 +1,4 @@
-<x-dashboardHead active="user-profile"/>
+<x-dashboardHead active="User Profile"/>
 
 <div class="content">
     @if(session('success'))

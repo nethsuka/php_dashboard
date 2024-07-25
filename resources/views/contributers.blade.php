@@ -1,4 +1,4 @@
-<x-dashboardHead active="access-controls" buttonName="ADD MEMBER" url="/new-member"/>
+<x-dashboardHead active="Access Controls" buttonName="ADD MEMBER" url="/new-member"/>
 
       <!-- content -->
       <div class="content">
@@ -60,9 +60,9 @@
                 </div>
               </div>
             </div>
-            <div class="col-md-12">
+            {{-- <div class="col-md-12">
               <h3 class="description">Your content here</h3>
-            </div>
+            </div> --}}
           </div>
         </div>
       </div>
