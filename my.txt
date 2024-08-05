@@ -1,0 +1,29 @@
+php artisan serve
+
+php artisan make:migration create_links_table
+
+php artisan make:model links -mc
+
+php artisan migrate
+
+php artisan migrate:fresh
+
+php artisan migrate:refresh
+
+php artisan migrate:status
+
+php artisan migrate:rollback
+
+php artisan make:controller MyController
+
+php artisan config:cache
+php artisan cache:clear
+php artisan view:clear
+
+
+-inatalling authantication package-
+
+1 -  composer require laravel/ui
+
+2 - php artisan ui vue --auth
+
