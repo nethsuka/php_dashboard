@@ -1,0 +1,17 @@
+Run these commands:
+
+composer install (disable your virusguard befor run this)
+
+npm install
+
+mkdir -p storage/framework/views
+
+cp .env.example .env
+
+php artisan key:generate
+
+php artisan storage:link
+
+php artisan serve 
+
+npm run dev
